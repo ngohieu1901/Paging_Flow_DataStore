@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="this_action_may_contain_advertising">This action may contain advertising</string>
+    <string name="Language">Language</string>
+    <string name="Your_opinion_matter_to_us">Your Opinion Matter To Us!</string>
+    <string name="we_d_greatly_appreciate_if_you_can_rate_us">If you enjoy this app, would you mind rating us on the Google Play, then?</string>
+    <string name="may_be_later">Not now</string>
+    <string name="thank_u">Thank you!</string>
+    <string name="rate">Rate</string>
+    <string name="please_give_rating">Please give me a rating!</string>
+    <string name="this_is_item_sample">This is item sample!</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="next">Next</string>
+    <string name="get_started">Get Started</string>
+    <string name="text_permission">This app needs permissions below to work properly</string>
+    <string name="tv_continue">Continue</string>
+    <string name="allow_access">Allow access</string>
+    <string name="desc_dialog_warning_permission">You must allow all Permission to use this app with full feature.</string>
+    <string name="title_intro_1">Title Intro 1</string>
+    <string name="content_intro_1">Quickly open and read XLS, XLSX, and CSV files on your phone with ease.</string>
+    <string name="title_intro_2">Powerful Sheet Manager</string>
+    <string name="content_intro_2">Manage all your spreadsheet files anytime with simple yet professional tools.</string>
+    <string name="title_intro_3">Work Made Simple</string>
+    <string name="content_intro_3">Stay productive anywhere — no need to sit at your desktop all day.</string>
+    <string name="title_intro_4">Smooth Sheet Navigation</string>
+    <string name="content_intro_4">Easily browse through spreadsheets and locate your data in seconds.</string>
+    <string name="please_select_language_to_continue">Please select language to continue</string>
+    <string name="start">Start</string>
+    <string name="no_internet">No Internet</string>
+    <string name="thank_you_for_choosing_us">Thank you for choosing us</string>
+
+    <string name="go_to_setting">Go to setting</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="loading">Loading</string>
+    <string name="try_again">Try again</string>
+    <string name="what_problems_do_you_encounter_during_use">What problems do you encounter during use?</string>
+    <string name="not_much_more_useful_than_the_default_features">Not much more useful than the default features</string>
+    <string name="explore">Explore</string>
+    <string name="unresponsive_or_laggy">Unresponsive or Laggy</string>
+    <string name="why_did_you_uninstall_the_app">Why did you\nuninstall the app?</string>
+    <string name="difficult_to_use">Difficult to use</string>
+    <string name="too_many_ads">Too many ads</string>
+    <string name="error_not_working">Error Not Working</string>
+    <string name="fast_battery_drain">Fast battery drain</string>
+    <string name="others">Others</string>
+    <string name="don_t_uninstall_yet">Don’t uninstall yet</string>
+    <string name="still_want_to_uninstall">Still want to uninstall</string>
+    <string name="uninstall">Uninstall</string>
+    <string name="cancel">Cancel</string>
+    <string name="please_enter_the_reason_why_you_uninstall_the_app_here">Please enter the reason why you uninstall the app here</string>
+    <string name="share">Share</string>
+    <string name="save">Save</string>
+    <string name="share_file">Share file</string>
+    <string name="get_start_now">Get start now</string>
+
+    <string name="new_update_available">🚀 New Update Available!</string>
+    <string name="upgrade_now_for_a_smoother_experience_bug_fixes_for_better_performance">Upgrade now for a smoother experience, bug fixes for better performance. ⚡</string>
+    <string name="update_now">Update Now</string>
+    <string name="update_application_fail">Update application fail!</string>
+    <string name="update_application_success">Update application success!</string>
+    <string name="request_update_application_fail">Request update application fail!</string>
+    <string name="can_t_update_scores_check_your_internet_connection">Can’t update scores – check your internet connection!</string>
+    <string name="updated_and_ready_welcome_back">Updated and ready – welcome back!</string>
+    <string name="there_is_no_internet_connection_please_check_your_internet_connection">There is no internet connection! \n Please check your internet connection!</string>
+    <string name="no">No</string>
+    <string name="applying_your_language_settings">Applying your language settings</string>
+    <string name="we_re_setting_up_your_language_preferences">We\'re setting up your language preferences.</string>
+    <string name="permission">Permission</string>
+    <string name="skip">Skip</string>
+    <string name="all_files">All files</string>
+    <string name="settings">Settings</string>
+    <string name="exit_app">Exit app?</string>
+    <string name="are_you_sure_you_want_to_exit_the_app">Are you sure you want to exit the app?</string>
+    <string name="exit">Exit</string>
+
+</resources>
