@@ -1,8 +1,8 @@
 package com.hieunt.base.data.dto
 
 data class DataFixtures(
-    var data: MutableList<FixtureDto>,
-    var timezone: String
+    val data: MutableList<FixtureDto>,
+    val timezone: String
 )
 
 data class FixtureDto(
