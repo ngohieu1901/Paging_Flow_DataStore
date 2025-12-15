@@ -8,12 +8,11 @@ object Constants {
     const val PRIVACY_POLICY =
         "https://amazic.net/Privacy-Policy-270pdf.html"
 
-    const val BASE_URL = ""
+    const val BASE_URL = "https://api.sportmonks.com/v3/"
 
     object IntentKeys {
         const val SCREEN = "SCREEN"
         const val SPLASH_ACTIVITY = "SplashActivity"
-        const val FILES_MODEL = "FilesModel"
     }
 
     object Screen {

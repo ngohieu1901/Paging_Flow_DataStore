@@ -72,5 +72,6 @@
     <string name="exit_app">Exit app?</string>
     <string name="are_you_sure_you_want_to_exit_the_app">Are you sure you want to exit the app?</string>
     <string name="exit">Exit</string>
+    <string name="live_score">Live Score</string>
 
 </resources>

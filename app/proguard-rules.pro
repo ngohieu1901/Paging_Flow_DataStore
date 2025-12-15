@@ -71,5 +71,5 @@
  -keep,allowobfuscation,allowshrinking class retrofit2.Response
  -keep,allowobfuscation,allowshrinking class kotlin.coroutines.Continuation
 
--keep class com.hieunt.base.data.dto** { *; }
+-keep class com.hieunt.base.data.dto.** { *; }
 -keep class com.hieunt.base.domain.model.** { *; }

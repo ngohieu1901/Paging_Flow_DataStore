@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface AppApi {
     @GET("football/fixtures/date/{date}")
-    fun getFixturesByDate(
+    suspend fun getFixturesByDate(
         @Path("date") date: String,
         @Query("api_token") apiToken: String,
         @Query("timezone") timezone: String,

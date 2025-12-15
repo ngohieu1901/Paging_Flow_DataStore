@@ -1,7 +1,7 @@
 package com.hieunt.base.di
 
-import com.hieunt.base.domain.repository.Repository
-import com.hieunt.base.data.repositories.RepositoryImpl
+import com.hieunt.base.domain.repository.FixtureRepository
+import com.hieunt.base.data.repositories.FixtureRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -13,5 +13,5 @@ import javax.inject.Singleton
 abstract class RepositoryModule {
     @Singleton
     @Binds
-    abstract fun bindTaskRepository(repository: RepositoryImpl): Repository
+    abstract fun bindTaskRepository(repository: FixtureRepositoryImpl): FixtureRepository
 }

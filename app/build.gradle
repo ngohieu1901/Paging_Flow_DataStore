@@ -9,6 +9,12 @@ plugins {
     id("kotlin-parcelize")
 }
 
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localProperties.load(new FileInputStream(localPropertiesFile))
+}
+
 android {
     namespace 'com.hieunt.base'
     compileSdk 35
@@ -19,11 +25,12 @@ android {
         targetSdk 35
         versionCode 100
         versionName "1.0.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         def formattedDate = new Date().format('MM.dd.yyyy')
         archivesBaseName = "ASA_BaseProject_v${versionName}_${formattedDate}"
+
+        buildConfigField "String", "API_KEY", "\"${localProperties['API_KEY']}\""
     }
 
 
