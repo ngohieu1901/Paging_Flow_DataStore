@@ -1,13 +1,9 @@
 package com.hieunt.base.domain.repository
 
+import androidx.paging.PagingData
 import com.hieunt.base.domain.model.FixtureDomain
+import kotlinx.coroutines.flow.Flow
 
 interface FixtureRepository {
-    suspend fun getAllFixtureByDate(
-        date: String,
-        timezone: String,
-        include: String,
-        perPage: Int,
-        page: Int
-    ): Result<List<FixtureDomain>>
+    fun getAllFixture(): Flow<PagingData<FixtureDomain>>
 }

@@ -5,4 +5,5 @@ data class ParticipantDomain(
     val sportId: Long,
     val countryId: Long,
     val logoTeam: String,
+    val name: String,
 )

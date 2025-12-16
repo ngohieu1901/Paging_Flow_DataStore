@@ -55,7 +55,8 @@ fun Fragment.launchActivityForResult(
     }
 }
 
-fun Fragment.toast(msg: String) {
+fun Fragment.toast(msg: String?) {
+    if (msg == null) return
     Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
 }
 

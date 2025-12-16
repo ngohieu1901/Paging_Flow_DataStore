@@ -185,11 +185,11 @@ abstract class BaseFragment<VB : ViewBinding>(
         }
     }
 
-    private fun showLoading() {
+    protected fun showLoading() {
         (activity as? BaseActivity<*>)?.showLoading()
     }
 
-    private fun dismissLoading() {
+    protected fun dismissLoading() {
         (activity as? BaseActivity<*>)?.dismissLoading()
     }
 
