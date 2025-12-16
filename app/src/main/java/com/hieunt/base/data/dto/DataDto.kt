@@ -23,6 +23,7 @@ data class FixtureResponse(
     @Json(name = "state") val state: StateResponse?,
     @Json(name = "participants") val participants: List<ParticipantResponse>?,
     @Json(name = "scores") val scores: List<ScoreResponse>?,
+    @Json(name = "starting_at") val startingAt: String,
 )
 
 @JsonClass(generateAdapter = true)
@@ -96,7 +97,8 @@ fun FixtureResponse.toFixtureDomain(): FixtureDomain {
         leagueDomain = this.league.toLeagueDomain(),
         state = this.state?.toStateDomain(),
         participants = this.participants?.map { it.toParticipantDomain() } ?: emptyList(),
-        scores = this.scores?.map { it.toScoreDomain() } ?: emptyList()
+        scores = this.scores?.map { it.toScoreDomain() } ?: emptyList(),
+        startingAt = this.startingAt
     )
 }
 

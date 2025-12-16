@@ -16,6 +16,7 @@ class FixturePagingAdapter: PagingDataAdapter<FixtureDomain, FixturePagingAdapte
         fun bind(data: FixtureDomain) {
             binding.apply {
                 tvStatus.text = data.state?.name
+                tvDate.text = data.startingAt
 
                 loadImage(ivLogoTeam1, data.participants[0].logoTeam)
                 loadImage(ivLogoTeam2, data.participants[1].logoTeam)

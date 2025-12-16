@@ -5,5 +5,6 @@ data class FixtureDomain(
     val leagueDomain: LeagueDomain,
     val state: State?,
     val participants: List<ParticipantDomain>,
-    val scores: List<ScoreDomain>
+    val scores: List<ScoreDomain>,
+    val startingAt: String
 )
