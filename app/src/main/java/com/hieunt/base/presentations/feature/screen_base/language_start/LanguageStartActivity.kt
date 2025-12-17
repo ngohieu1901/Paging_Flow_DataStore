@@ -64,10 +64,6 @@ class LanguageStartActivity : BaseActivity<ActivityLanguageStartBinding>(Activit
     @Inject
     lateinit var sharePref: SharePrefUtils
 
-    override fun handleOnBackPressed() {
-        finishAffinity()
-    }
-
     override fun initView() {
         logEvent(EventName.language_fo_open)
         if (sharePref.countOpenApp <= 10) {
@@ -81,15 +77,6 @@ class LanguageStartActivity : BaseActivity<ActivityLanguageStartBinding>(Activit
             object : BannerCallback() {},
             {},
             RemoteName.BANNER_SETTING
-        )
-
-        val nativeManager = loadNative(
-            NATIVE_LANG,
-            NATIVE_LANG_2,
-            NATIVE_LANG,
-            NATIVE_LANG_2,
-            R.layout.ads_native_large_button_above,
-            R.layout.ads_shimmer_large_button_above,
         )
 
         preloadANativeMainIntro()
@@ -107,9 +94,6 @@ class LanguageStartActivity : BaseActivity<ActivityLanguageStartBinding>(Activit
             logEvent(EventName.language_fo_choose)
             if (sharePref.countOpenApp <= 10 && !isSelectedLanguage) {
                 logEvent(EventName.language_fo_choose + "_" + sharePref.countOpenApp)
-            }
-            if(!isSelectedLanguage){
-                nativeManager?.reloadAdNow()
             }
             isSelectedLanguage = true
             SystemUtils.setLocale(this)

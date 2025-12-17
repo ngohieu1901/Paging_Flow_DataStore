@@ -28,8 +28,4 @@ class NoInternetActivity: BaseActivity<ActivityNoInternetBinding>(ActivityNoInte
     override fun dataCollect() {
 
     }
-
-    override fun handleOnBackPressed() {
-        finishAffinity()
-    }
 }

@@ -34,14 +34,6 @@ class PermissionActivity : BaseActivity<ActivityPermissionBinding>(ActivityPermi
 
     override fun initView() {
         logEvent(EventName.permission_open)
-        loadNative(
-            remoteKey = NATIVE_PERMISSION,
-            remoteKeySecondary = NATIVE_PERMISSION,
-            adsKeyMain = NATIVE_PERMISSION,
-            adsKeySecondary = NATIVE_PERMISSION,
-            idLayoutNative = R.layout.ads_native_large_button_above,
-            idLayoutShimmer = R.layout.ads_shimmer_large_button_above
-        )
         binding.tvContinue.text = getString(if (permissionUtils.isGrantAllFilesPermissionStorage()) R.string.tv_continue else R.string.skip)
 
         binding.ivSwitch.setOnCheckedChangeListener { _, isChecked ->

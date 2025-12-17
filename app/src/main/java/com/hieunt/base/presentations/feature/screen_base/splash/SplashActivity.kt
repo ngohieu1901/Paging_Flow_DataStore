@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.lifecycle.lifecycleScope
 import com.amazic.library.Utils.EventTrackingHelper.native_language
 import com.amazic.library.Utils.NetworkUtil
@@ -130,6 +131,10 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding
             finish()
             return
         }
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {}
+        })
 
         sharePref.countOpenApp += 1
         logEvent(EventName.splash_open)
@@ -301,9 +306,5 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(ActivitySplashBinding
         super.onResume()
         AdsHelper.disableResume(this)
         AsyncSplash.getInstance().checkShowSplashWhenFail()
-    }
-
-    override fun handleOnBackPressed() {
-
     }
 }

@@ -18,15 +18,6 @@ class WelcomeBackActivity :
     BaseActivity<ActivityWelcomeBackBinding>(ActivityWelcomeBackBinding::inflate) {
 
     override fun initView() {
-        loadNative(
-            remoteKey = NATIVE_WB,
-            remoteKeySecondary = NATIVE_WB,
-            adsKeyMain = NATIVE_WB,
-            adsKeySecondary = NATIVE_WB,
-            idLayoutNative = R.layout.ads_native_large_button_above,
-            idLayoutShimmer = R.layout.ads_shimmer_large_button_above
-        )
-
         binding.tvContinue.tap {
             finish()
         }
@@ -60,10 +51,6 @@ class WelcomeBackActivity :
     }
 
     override fun dataCollect() {
-
-    }
-
-    override fun handleOnBackPressed() {
 
     }
 }

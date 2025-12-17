@@ -100,15 +100,6 @@ class IntroActivity : BaseActivity<ActivityIntroBinding>(ActivityIntroBinding::i
             logEvent(EventName.onboard_open + "_" + sharePref.countOpenApp)
         }
 
-        loadNative(
-            NATIVE_INTRO,
-            NATIVE_INTRO_2,
-            NATIVE_INTRO,
-            NATIVE_INTRO_2,
-            R.layout.ads_native_small_button_above,
-            R.layout.ads_shimmer_small_button_above,
-        )
-
         introAdapter = IntroAdapter(this, initData()) {
             binding.viewPager2.currentItem += 1
         }
@@ -127,23 +118,19 @@ class IntroActivity : BaseActivity<ActivityIntroBinding>(ActivityIntroBinding::i
                         isFinishActivity = false,
                         onClickRate = {},
                         onDismissListener = {
-                            loadAndShowInter(INTER_INTRO, INTER_INTRO) {
-                                logEvent(EventName.onboarding_next_click)
-                                if (sharePref.countOpenApp <= 10) {
-                                    logEvent(EventName.onboarding_next_click + "_" + sharePref.countOpenApp)
-                                }
-                                startNextScreen()
+                            logEvent(EventName.onboarding_next_click)
+                            if (sharePref.countOpenApp <= 10) {
+                                logEvent(EventName.onboarding_next_click + "_" + sharePref.countOpenApp)
                             }
+                            startNextScreen()
                         },
                     ).show(supportFragmentManager, "RatingDialogFragment")
                 } else {
-                    loadAndShowInter(INTER_INTRO, INTER_INTRO) {
-                        logEvent(EventName.onboarding_next_click)
-                        if (sharePref.countOpenApp <= 10) {
-                            logEvent(EventName.onboarding_next_click + "_" + sharePref.countOpenApp)
-                        }
-                        startNextScreen()
+                    logEvent(EventName.onboarding_next_click)
+                    if (sharePref.countOpenApp <= 10) {
+                        logEvent(EventName.onboarding_next_click + "_" + sharePref.countOpenApp)
                     }
+                    startNextScreen()
                 }
             } else {
                 binding.viewPager2.currentItem += 1
@@ -246,10 +233,6 @@ class IntroActivity : BaseActivity<ActivityIntroBinding>(ActivityIntroBinding::i
             params.setMargins(8, 0, 8, 0)
             binding.linearDots.addView(dots[i], params)
         }
-    }
-
-    override fun handleOnBackPressed() {
-        finishAffinity()
     }
 
     override fun onResume() {

@@ -80,16 +80,6 @@ class LanguageStartNewActivity : BaseActivity<ActivityLanguageStartNewBinding>(
             RemoteName.BANNER_SETTING
         )
 
-        val nativeManager = loadNative(
-            remoteKey = NATIVE_LANG,
-            remoteKeySecondary = NATIVE_LANG_2,
-            adsKeyMain = NATIVE_LANG,
-            adsKeySecondary = NATIVE_LANG_2,
-            idLayoutNative = R.layout.ads_native_large_button_above,
-            idLayoutShimmer = R.layout.ads_shimmer_large_button_above,
-            isAlwaysReloadOnResume = false
-        )
-
         preloadANativeMainIntro()
 
         adapter = LanguageStartNewAdapter(
@@ -105,7 +95,6 @@ class LanguageStartNewActivity : BaseActivity<ActivityLanguageStartNewBinding>(
                 }
                 if (!isChooseLanguage) {
                     isChooseLanguage = true
-                    nativeManager?.cancelAutoReloadNative()
                     showNativeClickLanguagePreloadAtSplash()
                 }
                 SystemUtils.setLocale(this)
@@ -126,7 +115,6 @@ class LanguageStartNewActivity : BaseActivity<ActivityLanguageStartNewBinding>(
                 )
             },
             onExpand = {
-                nativeManager?.cancelAutoReloadNative()
                 showNativeClickLanguagePreloadAtSplash()
                 viewModel.handleExpand(it)
             }
