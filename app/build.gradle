@@ -156,6 +156,9 @@ dependencies {
     //startup
     implementation "androidx.startup:startup-runtime:1.2.0"
     //data store
-    implementation("androidx.datastore:datastore-preferences:1.2.0")
+    implementation "androidx.datastore:datastore-preferences:1.2.0"
+    //paging
     implementation "androidx.paging:paging-runtime:3.3.6"
+    //swiperefreshlayout
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.2.0"
 }

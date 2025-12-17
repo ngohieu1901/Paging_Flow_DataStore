@@ -23,7 +23,6 @@ class FixturePagingAdapter: PagingDataAdapter<FixtureDomain, FixturePagingAdapte
 
                 tvNameTeam1.text = data.participants[0].name
                 tvNameTeam2.text = data.participants[1].name
-
                 if (data.state?.state != "NS") {
                     if (data.participants.isNotEmpty()) {
                         var scoreOfTeam1 = 0

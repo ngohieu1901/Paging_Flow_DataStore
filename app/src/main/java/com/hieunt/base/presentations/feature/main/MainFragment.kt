@@ -1,5 +1,6 @@
 package com.hieunt.base.presentations.feature.main
 
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.paging.LoadState
 import com.hieunt.base.base.BaseFragment
@@ -24,6 +25,9 @@ class MainFragment: BaseFragment<FragmentMainBinding>(FragmentMainBinding::infla
         binding.rvLeague.adapter = fixturePagingAdapter.withLoadStateFooter(
             footer = FixtureLoadStateAdapter { fixturePagingAdapter.retry() }
         )
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            fixturePagingAdapter.refresh()
+        }
     }
 
     override fun dataCollect() {
@@ -33,29 +37,17 @@ class MainFragment: BaseFragment<FragmentMainBinding>(FragmentMainBinding::infla
             }
         }, {
             fixturePagingAdapter.loadStateFlow.collectLatest { loadStates ->
-                val newState = when (val refreshState = loadStates.refresh) {
-                    is LoadState.Loading -> MainUiState.Loading
-                    is LoadState.Error -> MainUiState.Error(refreshState.error.localizedMessage)
-                    is LoadState.NotLoading -> {
-                        MainUiState.Success(isEmpty = fixturePagingAdapter.itemCount == 0)
-                    }
+                binding.swipeRefreshLayout.isRefreshing = loadStates.refresh is LoadState.Loading
+
+                (loadStates.refresh as? LoadState.Error)?.let {
+                    toast(it.error.localizedMessage)
                 }
-                handleUiState(newState)
+
+                val isListEmpty = loadStates.refresh is LoadState.NotLoading && fixturePagingAdapter.itemCount == 0
+
+                binding.rvLeague.isVisible = !isListEmpty
+                binding.tvEmptyData.isVisible = isListEmpty
             }
         })
-    }
-
-    private fun handleUiState(state: MainUiState) {
-        when (state) {
-            is MainUiState.Loading -> showLoading()
-
-            is MainUiState.Success -> dismissLoading()
-
-            is MainUiState.Error -> {
-                dismissLoading()
-                toast(state.message)
-            }
-            else -> {}
-        }
     }
 }

@@ -74,5 +74,6 @@
     <string name="exit">Exit</string>
     <string name="live_score">Live Score</string>
     <string name="end">End.</string>
+    <string name="empty_fixture">Empty fixture!</string>
 
 </resources>

@@ -6,6 +6,7 @@
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <TextView
+        android:id="@+id/tv_live_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/live_score"
@@ -15,15 +16,36 @@
         android:layout_gravity="center"
         android:textColor="@color/black"
         android:paddingVertical="16dp" />
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_league"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        tools:listitem="@layout/item_league_and_fixture"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:layout_marginBottom="12dp"
-        android:layout_marginHorizontal="16dp" />
+        app:swipeRefreshLayoutProgressSpinnerBackgroundColor="@color/app_color">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_league"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/item_league_and_fixture"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_marginBottom="12dp"
+                android:layout_marginHorizontal="16dp" />
+            <TextView
+                android:id="@+id/tv_empty_data"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/empty_fixture"
+                android:textColor="@color/app_color"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_medium"
+                android:textStyle="italic"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
